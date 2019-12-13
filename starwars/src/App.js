@@ -3,12 +3,13 @@ import axios from "axios";
 import styled from "styled-components";
 import Person from "./components/person";
 import { Button } from 'reactstrap';
+import ReactDOM from 'react-dom';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
-  const [url, setUrl] = useState(1)
+  const [url, setUrl] = useState(4)
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a
   // side effect in a component, you want to think about which state and/or props it should
@@ -24,10 +25,17 @@ const App = () => {
     return (<Parent>
         <Button onClick={e => {
             // console.log('clicked');
-            setUrl(url + 1);
+            setUrl(url - 1);
+            console.log(url)
+            ReactDOM.render(<App />, document.getElementById("root"));
         }}>Previous</Button>
 
-            <Button>Next</Button>
+<Button onClick={e => {
+            // console.log('clicked');
+            setUrl(url + 1);
+            console.log(url)
+            ReactDOM.render(<App />, document.getElementById("root"));
+        }}>Next</Button>
     </Parent>)
 }
 
