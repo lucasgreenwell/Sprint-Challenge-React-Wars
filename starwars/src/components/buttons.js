@@ -13,7 +13,9 @@ const Buttons = () => {
     return (<Parent>
         <Button onClick={e => {
             console.log('clicked');
+            
         }}>Previous</Button>
+
             <Button>Next</Button>
     </Parent>)
 }

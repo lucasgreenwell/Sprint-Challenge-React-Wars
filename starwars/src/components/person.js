@@ -24,7 +24,7 @@ const Person = props => {
 
   useEffect(() => {
     axios
-      .get(`https://swapi.co/api/people`)
+      .get(`https://swapi.co/api/people/?page=${props.url}`)
       .then(res => {
         console.log(res);
         setguys(res.data.results);
